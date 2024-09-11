@@ -1,0 +1,257 @@
+/* font-family: 
+ font-family: "Roboto", sans-serif; */
+
+ /* Normalizacion: */
+ * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /*Esto mantiene el ancho y el alto a pesar de padding y border */
+    font-family:"Roboto", sans-serif;
+    list-style: none; /*quitar los puntos y decoracion de las listas*/
+    text-decoration: none; /* esto quita el subrayado de los enlaces*/ 
+    color: black; 
+ }
+ body{
+   background-color: white;
+ }
+ 
+ 
+ header {
+   position: fixed; /*esto hace que el header se quede fijo en la parte superior*/
+   right: 0;
+   top: 0;
+   z-index: 100; /*esto hace que el header se muestre por enima*/
+   width: 100%;
+   display: flex; /*esto hara que los elementos se mantengan en linea */
+   align-items: center;
+   justify-content: space-between;
+   padding: 13px 3%;
+   background-color: transparent;
+
+}
+
+.logo{
+  font-size: 30px;
+  font-weight: 800px; /*ESTE ES EL GRUESO DELAS LETRAS*/
+}
+.navlist{
+    display: flex; /*esto sirve para que los elementos de ul se pongan en linea*/
+    
+}
+.navlist a{
+    margin-left: 60px; /*esto es para separar las palabras*/
+    font-size: 15px;
+    font-weight: 600px;
+    border-bottom: 2px solid transparent;/*este es un subrayado transparente*/
+    transition: all .5s ease;/* este es para animar todas las caracteristicas de nav a*/
+}
+.navlist a:hover{
+    border-bottom: 2px solid white; /*este es un subrayado blanco que aparecera cuando estamos encima con el mousse*/
+}
+/* LO PONGO EN NONE PARA QUE SOLO SE VEA CUANDO LA PAGINA ESTA COLAPSADA DE FORMA HORIZONTAL */
+#menu-icon{
+  display: none;
+}
+
+#menu-icon{
+  
+  font-size: 35px;
+  z-index: 101;
+  cursor: pointer;
+  color: white;
+}
+
+/* NUNCA QUIERO QUE SE VEA EL CHECKBOX */
+#menu-toggle{
+  display: none;
+}
+/* PARA QUE NO SE LE PUEDA HACER CLICK */
+.menu-icon-action{
+  display: none; 
+}
+
+.hero{
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(245.59deg, #37f857d3 0%, #e0992e 50%, #38a2bdee 75%); /*ASI SE HACE UN DEGRADE DE COLORES */
+  position: relative; /*para que sea relativo el contenedor (nos permite usar top, bottom, left y right)*/
+  display: grid; /*PARA QUE EL HERO SE PUEDA DIVIDIR EN DOS COLUMNAS*/
+  grid-template-columns: 1fr 1fr; /*LAS DOS COLLUMNAS*/
+  align-items: center; /*PARA ALINEAR VERTICALMENTE EL HERO*/
+  gap: 2rem; /*HAYA ESÁCIO DE 2REM ENTRE LAS DOS COLUMNAS*/
+}
+
+section{
+  padding: 0 8%;
+}
+
+.hero-text h5{
+  font-size: 14px;
+  font-weight:400;
+  margin-bottom: 25px;
+}
+.hero-text h4{
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.hero-text h1{
+  font-family:"Roboto", sans-serif;
+  font-size: 50px;
+  line-height: 1;
+  margin: 0 0 30px;
+}
+
+.hero-text p{
+  font-size: 80%;
+  margin-bottom: 40px;
+  line-height: 1.9;
+}
+
+.hero-img img{
+  width: 200px;
+  margin: 10px 0 0 10%;
+  height: auto;
+  transition: all .5s linear;
+  border-radius: 150px;
+}
+
+.hero-img img:hover{
+  width: 350px;
+  opacity: 0.6;
+}
+
+.hero-text a{
+  display: inline-block;
+  background-color: #4d4d;
+  border: 1px solid transparent;
+  padding: 15px 30px;
+  line-height: 1.4;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 30px;
+  text-transform: uppercase;
+  transition: all .5s ease;
+}
+
+.hero-text a:hover{
+  background-color: transparent;
+  border: 1px solid white;
+  transform: translateX(8px); /*TRANSICION SOBRE EL EJE DE X*/
+}
+.hero-text a.video{
+  background-color: transparent;
+  border: 1px solid white;
+  margin-left:  20px;
+}
+.hero-text a.video i{
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.icons{
+  position: absolute;
+  top: 50vh;
+  padding: 0 3%;
+  transform: translateY(-50%);
+}
+.icons i{
+  display: block;
+  margin: 26px 0;
+  font-size: 24px;
+  transition: all .5s ease;
+}
+.icons i:hover{
+  color: #4d4d4d;
+  transform: translateY(-5px);
+}
+.scroll-down{
+  position: absolute;
+  bottom: 6%;
+  right: 3%;
+}
+.scroll-down i{
+  display: block;
+  padding: 12px;
+  font-size: 25px;
+  background-color: aqua;
+  border-radius: 30px;
+  transition: all .5s ease;
+}
+
+.scroll-down i:hover{
+  transform: translateY(-5px);
+}
+
+/* ACA VAMOS A HACER MEDIAQUERIES PARA QUE LA WEB SEA RESPONSIVE */
+@media (max-width:992px){
+  section{
+    padding: 0 3%;
+    transition: .2s;
+  }
+  .hero-text{
+    padding-top: 0;
+  }
+  .hero-img{
+    text-align: center;
+  }
+
+  .hero-img img{
+    width: 80%;
+    margin: 10% 0 0 10%;
+  }
+  .hero-text p{
+    font-size: 70%;
+  }
+  .scroll-down{
+    display: none;
+  }
+  .icons{
+    display: none;
+  }
+}
+
+
+@media (max-width: 768px){
+  .menu-icon-action{
+    display: block;
+  }
+  #menu-icon{
+    display: block;
+  }
+  .hero-text{
+    text-align: center;
+    padding-top: 100px;
+  }
+  .hero-img img{
+    margin: 0;
+
+  }
+  .hero{
+    height: 100%;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+  }
+  .navlist{
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    width: 200px;
+    height: 180px;
+    background-color: rgb(4, 58, 49);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+    transition: all .5s ease;
+  }
+  .navlist a{
+    margin-left: 0;
+    display: block;
+    margin: 7px 0;
+  }
+
+  #menu-toggle:checked + label.menu-icon-action + ul{
+    right: 0;
+  }
+}
